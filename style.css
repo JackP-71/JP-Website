@@ -1,0 +1,139 @@
+@font-face { 
+    font-family: ZainLight;
+    src: url('Zain-Light.ttf') format('truetype');
+    font-size: larger;
+}
+body {
+    background-color: #062035;
+    color: #d1eaff;
+    font-family: ZainLight;
+    font-size:medium;
+}
+
+#container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#topBar {
+    border-radius: 10px;
+    border: 2px solid #7b9ed1;
+}
+
+#headerArea {
+    border-radius: 10px;
+    border: 2px solid #7b9ed1;
+    background-color: #000000;
+}
+
+#navbar {
+    border-radius: 10px;
+    border: 2px solid #7b9ed1;
+    background-color: #000000;
+    height: 35px;
+    width:100%;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+#navbar li {
+    padding-top: 10px;
+}
+
+#navbar li a {
+    color: #90b3e8;
+    font-size:large;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+
+#flex {
+    display: flex;
+}
+
+.box {
+    background-color: #172944;
+    border: 2px solid #7b9ed1;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+main {
+    background-color: #000000;
+    border-radius: 10px;
+    border: 2px solid #7b9ed1;
+    flex: 1;
+    padding: 20px;
+}
+
+summary {
+        cursor: pointer;
+}
+
+table img {
+    width: 100%;
+    height:100%;
+}
+table {
+    width: 100%;
+}
+table {border: none;}
+
+
+h1,
+h2,
+h3,
+strong {
+    color: #7b9ed1;
+    font-size: larger;
+}
+
+p {
+    font-size: larger;
+}
+
+b {
+    font-size: larger;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+h3 {
+    font-size: 20px;
+}
+ul {
+    font-size: larger;
+}
+
+#aboutTable table {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-collapse: collapse;
+}
+
+#projectTable th, td {
+    padding: 20px;
+    border-radius:10px;
+}
+
+#projectTable table {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-collapse: collapse;
+    border-radius:10px;
+}
