@@ -1,80 +1,37 @@
-@font-face { 
+/* @font-face { 
     font-family: ZainLight;
     src: url('Zain-Light.ttf') format('truetype');
     font-size: larger;
+} */
+
+:root {
+    --bg-color: #000000;
+    --font-color: #fceaff;
+    --st-font-color: #965fa0;
+    --accent-color: #ce41ce;
+    --link-color: #ee49ee;
+    --link-hover-color: #ba9cb6;
 }
+
 body {
-    background-color: #062035;
-    color: #d1eaff;
-    font-family: ZainLight;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    /* font-family: ZainLight; */
     font-size:medium;
-}
-
-#container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-#topBar {
-    border-radius: 10px;
-    border: 2px solid #7b9ed1;
-}
-
-#headerArea {
-    border-radius: 10px;
-    border: 2px solid #7b9ed1;
-    background-color: #000000;
-}
-
-#navbar {
-    border-radius: 10px;
-    border: 2px solid #7b9ed1;
-    background-color: #000000;
-    height: 35px;
-    width:100%;
-}
-
-#navbar ul {
-    display: flex;
-    padding: 0;
+    padding-left:75px;
     margin: 0;
-    list-style-type: none;
-    justify-content: space-evenly;
 }
 
-#navbar li {
-    padding-top: 10px;
+#header {
+    width: 100%;
+    background-color: var(--header-color);
+
+    height: 100px;
 }
 
-#navbar li a {
-    color: #90b3e8;
-    font-size:large;
-    font-weight: 800;
-    text-decoration: none;
-}
-
-
-#flex {
-    display: flex;
-}
-
-.box {
-    background-color: #172944;
-    border: 2px solid #7b9ed1;
-    padding: 10px;
-    border-radius: 10px;
-}
-
-main {
-    background-color: #000000;
-    border-radius: 10px;
-    border: 2px solid #7b9ed1;
-    flex: 1;
-    padding: 20px;
-}
-
-summary {
-        cursor: pointer;
+.flex {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 table img {
@@ -86,21 +43,90 @@ table {
 }
 table {border: none;}
 
+* {
+  font-family: "Noto Sans Mono", "Consolas", "SF Mono", monospace;
+  /* font-family: 'Kumbh Sans', sans-serif; */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  /* display:flex; */
+  justify-content: center;
+  background: var(--bg-color);
+  order:1;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border:solid 1px var(--accent-color);
+    border-radius: 5px;
+}
+
+.container a {
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+.smallContainer {
+    /* background-color: var(--bg-color); - UNLESS A BOX COLOR VARIABLE GETS ADDED - LEAVE COMMENTED OUT*/
+    border: 1px solid var(--accent-color);
+    padding: 5px;
+    border-radius:5px;
+    margin: 5px;
+    padding: 5px;
+    
+}
+
+/* a {
+  &,
+  &:visited {
+    &,
+    & small {
+      color: #084a90;
+      text-decoration: none;
+      display: inline-block;
+      transition: transform 0.3s ease;
+
+      @media (max-width: 900px) {
+        display: inline;
+      }
+    }
+  }
+
+  &:hover,
+  &:focus {
+    &,
+    & small {
+      background-clip: text;
+      color: transparent;
+      animation: 1.5s ease-in-out infinite;
+      background-size: 400% 100%;
+      text-decoration-style: wavy;
+      transform: scale(1.03) rotate(-1deg);
+    }
+  }
+} */
+
+
+/* font - sizing rules: */
 
 h1,
 h2,
 h3,
 strong {
-    color: #7b9ed1;
+    color: var(--st-font-color);
     font-size: larger;
 }
 
-p {
-    font-size: larger;
-}
-
-b {
-    font-size: larger;
+p, b, ul {
+    font-size: medium;
 }
 
 h1 {
@@ -115,25 +141,46 @@ h3 {
     font-size: 20px;
 }
 ul {
-    font-size: larger;
+  /* text-indent: 5%; */
+  padding-left: 1.5rem;
+}
+.smallContainer li {
+  list-style-type: "✦ ";
 }
 
-#aboutTable table {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    border-collapse: collapse;
+a::visited {
+  color: var(--link-hover-color)
 }
 
-#projectTable th, td {
-    padding: 20px;
-    border-radius:10px;
+.divider {
+    border:1px dashed var(--accent-color);
+    width: auto;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    scrollbar-color: var(--accent-color) var(--bg-color);
+    margin: 10px;
 }
 
-#projectTable table {
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    border-collapse: collapse;
-    border-radius:10px;
+#navbar a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+#navbar a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Makes it looks like it's typing - TODO RESOLVE ANIMATION */
+
+.header::after {
+  content: "_";
+  display: block;
+  animation: blink 1s infinite;
 }
