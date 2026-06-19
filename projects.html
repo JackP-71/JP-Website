@@ -17,16 +17,175 @@
         <div class="container">
             <h3>> programming projects.</h3>
             <p>Here you'll be able to see a list of all the programming projects I have worked on throughout my time at college and during my free time.</p>
-            <p>Alternatively, you could visit my github page to <a href="https://github.com/JackP-71?tab=repositories" target="_blank">view the repositiories</a> i have created there - the majority of them will be documented here with some information alongside.</p>
+            <p>Alternatively, you could visit my github page to <a href="https://github.com/JackP-71?tab=repositories" target="_blank">view the repositiories</a> I have created there - the majority of them will be documented here with some information alongside.</p>
 
             <div class="divider"></div>
 
             <center>
-            <p style="font-size: small;">Here they will be sorted by the data they were completed. <small>with the latest being at the top of the list.</small></p>
+            <p style="font-size: small;">Here they will be sorted by the date at which they were completed. <small>with the latest being at the top of the list.</small></p>
             </center>
 
+            <div class="divider"></div>
+
+            <!-- <details>
+                <summary>Indie Website (Major HTML / JS / CSS project)</summary>
+            </details> -->
+
             <details>
-                <summary>raindrops. (A HTML / Js / CSS project)</summary>
+                <summary>Small Simple Sensehat scripts (A simple Python project)</summary>
+                <h3>> Sensehat Scripts.</h3>
+                <p>these are a series of scripts I wrote to interact with the sensehat peripheral which is compatible with Raspberry Pi's.</p>
+
+                <table>
+                    <td>
+                        <div class="smallContainer">
+                        <h3>Synopsis of Project:</h3>
+                        <p>This project was a redo of some scripts I wrote in 2021 when I first got the sensehat. I came back to these scripts because I wanted to combine them all into one program. Now it has a simple text based UI for the user to interact with.</p>
+
+                        <h3>Features of project</h3>
+                        <ul>
+                            <li>allows you to check the following things:</li>
+                            <ul>
+                                <li>Pressure,</li>
+                                <li>Temperature,</li>
+                                <li>Humidity,</li>
+                                <li>Joystick movement,</li>
+                            </ul>
+                            <li>It also allows for custom text to be input and seen on the sensehat,</li>
+                        </ul></div>
+                    </td>
+                    </table>
+
+                    <div class="smallContainer">
+                    <p> will put the code here, you'll be able to copy it into the python IDE of your choice and hopefully it should run :)</p>
+                    <details open>
+                        <summary>Find the code below:</summary>
+                        <div class="codeContainer">
+                            <p>##these projects use the sensehat, it is imported here, as well as the time module</p>
+                            <p>## in addition to this, there is a menu sub-routine called to allow you to check all programs for this at once</p>
+                            <p></p>
+                            <p>import time</p>
+                            <p>from sense_hat import SenseHat</p>
+                            <p>sense = SenseHat()</p>
+                            <p></p>
+                            <p>def menu():</p>
+                            <p>print("")</p>
+                            <p>print("ENTER A NUMBER BASED ON WHAT YOU WANT TO SEE:")</p>
+                            <p>print("1 - show temperature")</p>
+                            <p>print("2 - show pressure")</p>
+                            <p>print("3 - show humidity")</p>
+                            <p>print("4 - show all of the above")</p>
+                            <p>print("5 - show custom text")</p>
+                            <p>print("6 - show joystick details")</p>
+                            <p>print("")</p>
+                            <p>print("7 - exit program")</p>
+                            <p>print("")</p>
+                            <p></p>
+                            <p>#this was originally called 'Temperature, pressure, humity.py'</p>
+                            <p>#certain aspects have been changed for an easier user experience</p>
+                            <p></p>
+                            <p>def showTemperature():</p>
+                            <p>print("temperature: " + str(sense.get_temperature()))</p>
+                            <p>def showPressure():</p>
+                            <p>print("pressure: "+ str(sense.get_pressure()))</p>
+                            <p>def showHumidity():</p>
+                            <p>print("humidity: "+ str(sense.get_humidity()))</p>
+                            <p>def showTrio():</p>
+                            <p>print("")</p>
+                            <p>showTemperature()</p>
+                            <p>showPressure()</p>
+                            <p>showHumidity()</p>
+                            <p>print("")</p>
+                            <p></p>
+                            <p>#this was originally called 'SlidingTextTest.py'</p>
+                            <p>#certain aspects have been changed for an easier user experience</p>
+                            <p></p>
+                            <p>def showText():</p>
+                            <p>print("enter a string to output: ")</p>
+                            <p>message = input()</p>
+                            <p>print("enter a number for how many times you want to output the string: ")</p>
+                            <p>quantity = input()</p>
+                            <p>print("enter an R value for the text colour: ")</p>
+                            <p>rValue = input()</p>
+                            <p>print("enter an G value for the text colour: ")</p>
+                            <p>gValue = input()</p>
+                            <p>print("enter an B value for the text colour: ")</p>
+                            <p>bValue = input()</p>
+                            <p></p>
+                            <p>print("enter an R value for the bg colour: ")</p>
+                            <p>rValue2 = input()</p>
+                            <p>print("enter an G value for the bg colour: ")</p>
+                            <p>gValue2 = input()</p>
+                            <p>print("enter an B value for the bg colour: ")</p>
+                            <p>bValue2 = input()</p>
+                            <p></p>
+                            <p>sense.show_message(str(message)*int(quantity), text_colour=[int(rValue), int(gValue), int(bValue)], back_colour=[int(rValue2), int(gValue2), int(bValue2)], scroll_speed=0.07)</p>
+                            <p></p>
+                            <p>#this was originally called '??.py'</p>
+                            <p>#certain aspects havebeen changed for an easier user experience</p>
+                            <p></p>
+                            <p>def showJoystick():</p>
+                            <p>e = (0, 0, 0)</p>
+                            <p>w = (255, 255, 255)</p>
+                            <p>while True:</p>
+                            <p>print("** the program will now run continually untl it is manually ended **")</p>
+                            <p>for event in sense.stick.get_events():</p>
+                            <p>if event.action == "pressed":</p>
+                            <p>print("the joystick has been pressed.")</p>
+                            <p>elif event.direction == "up":</p>
+                            <p>print("the joystick has been moved up.")</p>
+                            <p>sense.show_letter("U")</p>
+                            <p>elif event.direction == "down":</p>
+                            <p>print("the joystick has been moved down.")</p>
+                            <p>sense.show_letter("D")</p>
+                            <p>elif event.direction == "left":</p>
+                            <p>print("the joystick has been moved left.")</p>
+                            <p>sense.show_letter("L")</p>
+                            <p>elif event.direction == "right":</p>
+                            <p>print("the joystick has been moved right.")</p>
+                            <p>sense.show_letter("R")</p>
+                            <p>elif event.direction == "middle":</p>
+                            <p>print("the joystick has not been moved.")</p>
+                            <p>sense.show_letter("M")</p>
+                            <p></p>
+                            <p>time.sleep(0.5)</p>
+                            <p>sense.clear()</p>
+                            <p></p>
+                            <p>counter = 35</p>
+                            <p>while counter >= 0:</p>
+                            <p>print("** the program will run for " + str(counter) + " times before it exits **")</p>
+                            <p>menu()</p>
+                            <p>print("enter a number: ")</p>
+                            <p>value = input()</p>
+                            <p>if value =='1':</p>
+                            <p>showTemperature()</p>
+                            <p>elif value == '2':</p>
+                            <p>showPressure()</p>
+                            <p>elif value == '3':</p>
+                            <p>showHumidity()</p>
+                            <p>elif value == '4':</p>
+                            <p>showTrio()</p>
+                            <p>elif value == '5':</p>
+                            <p>showText()</p>
+                            <p>elif value == '6':</p>
+                            <p>showJoystick()</p>
+                            <p>elif value == '7':</p>
+                            <p>print("exiting program")</p>
+                            <p>time.sleep(2)</p>
+                            <p>exit()</p>
+                            <p>else:</p>
+                            <p>print("wrong input, try again.")</p>
+                            <p>counter = counter - 1</p>
+                            <p>exit()</p>
+                        </div>
+                    </details>
+
+                </div>
+                <div class="divider"></div>
+            </details>
+
+            <details>
+                <summary>raindrops. (A HTML / JS / CSS project)</summary>
                 <div class="divider"></div>
                 <h3>> raindrops.</h3>
                 <p>this is a simple web application simulating rain falling</p>
@@ -34,7 +193,7 @@
                 <table>
                     <td>
                     <div class="img">
-                        <center><img src="images/raindrops-img.png" alt="webApp img" style="max-height:1000px;max-width: 1100px;"></center>
+                        <center><img src="images/raindrops-img.png" alt="webApp img"></center>
                         <div class="smallContainer">
                             <p>A screenshot of the UI of the web application.</p>
                             <p><small>as a side note, the slider color in this screenshot were the accent colors assigned on windows.. this will change depending on the user's settings.</small></p>
@@ -44,7 +203,7 @@
                     <td>
                         <div class="smallContainer">
                             <h3>Synopsis of Project:</h3>
-                            <p>This was a project i wanted to try and make when i saw someone else try to make their own web app. It's quite simple.</p>
+                            <p>This was a project I wanted to try and make when I saw someone else try to make their own web app. It's quite simple.</p>
 
                             <h3>Features of project</h3>
                             <ul>
@@ -74,7 +233,7 @@
                 <table>
                     <td>
                     <div class="img">
-                        <center><img src="images/Form-img.png" alt="formApp img" style="max-height:1000px;max-width: 1100px;"></center>
+                        <center><img src="images/Form-img.png" alt="formApp img"></center>
                         <div class="smallContainer">
                             <p>A screenshot of the revising card window within the project</p>
                         </div>
@@ -94,7 +253,7 @@
                                 <li>The user is also able to adjust any user details if they need to (such as their username or password),</li>
                                 <li>The program itself uses databases to contain the data - it creates a database everytime a user signs up. This is so other users are unable to see other's cards without logging in first.</li>
                             </ul>
-                            <p>As this project was for coursework in college, i also had to create an extensive analysis of the project as I worked on it, this included the background of the project and the programming techniques used. It also details the testing which occurred during the creation of the program.</p>
+                            <p>As this project was for coursework in college, I also had to create an extensive analysis of the project as I worked on it, this included the background of the project and the programming techniques used. It also details the testing which occurred during the creation of the program.</p>
                         </ul></div>
                     </td>
                     </table>
@@ -116,7 +275,7 @@
                 <table>
                     <td>
                     <div class="img">
-                        <center><img src="images/DiceTD-img.png" alt="diceTD img" style="max-height:1000px;max-width: 1100px;"></center>
+                        <center><img src="images/DiceTD-img.png" alt="diceTD img"></center>
                         <div class="smallContainer">
                             <p>A screenshot taken partway through a game.</p>
                         </div>
@@ -134,7 +293,7 @@
                             <li>The game is able to be saved and loaded, so the user will be able to continue where they left off last time they played,</li>
                             <li>The user is able to place turrets on appropriate tiles on the map,</li>
                             <li>As the theme of the game was 'Roll of the Dice' the enemies are represented by dice which grow in power as the number of waves the user has completed increases.</li>
-                            <li>The artwork for this project was completed by someone else on the team I was assigned to. <small>if they had a link, i would put it here.</small></li>
+                            <li>The artwork for this project was completed by someone else on the team I was assigned to. <small>if they had a link, I would put it here.</small></li>
                         </ul></div>
                     </td>
                     </table>
@@ -157,7 +316,7 @@
                     <table>
                     <td>
                     <div class="img">
-                        <center><img src="images/HalloweenTBA-img.png" alt="HTBA img" style="max-height:1000px;max-width: 1100px;"></center>
+                        <center><img src="images/HalloweenTBA-img.png" alt="HTBA img"></center>
                         <div class="smallContainer">
                             <p>A screenshot taken partway through the game.</p>
                         </div>
@@ -197,7 +356,7 @@
                 <table>
                     <td>
                     <div class="img">
-                        <center><img src="images/#" alt="TBA" style="max-height:1000px;max-width: 1100px;"></center>
+                        <center><img src="images/#" alt="TBA"></center>
                         <div class="smallContainer">
                             <p>TBA.</p>
                         </div>
@@ -233,7 +392,7 @@
                 <table>
                     <td>
                     <div class="img">
-                        <center><img src="images/#" alt="TBA" style="max-height:1000px;max-width: 1100px;"></center>
+                        <center><img src="images/#" alt="TBA"></center>
                         <div class="smallContainer">
                             <p>TBA.</p>
                         </div>
@@ -262,8 +421,15 @@
             </details>-->
         </div>
     </div> 
-    
 
     <div class="writeFooter"></div>
+
+<style>
+    img {
+        max-height: 1000px;
+        max-width: 1100px;
+    }
+</style>
+
 </body>
 </html>
